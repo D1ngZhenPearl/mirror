@@ -28,7 +28,7 @@ const Video: React.FC = () => {
                 onClick={() => setOpen(true)}
                 shape="square"
                 type="primary"
-                style={{ right: 94 }}
+                style={{ position:'absolute',right: 14 ,bottom: 400}}
                 description="切换视频"
                 icon={<VideoCameraOutlined />}
             />
