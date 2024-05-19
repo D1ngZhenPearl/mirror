@@ -1,11 +1,17 @@
 import React, {useRef, useState} from 'react';
 import {Button, Drawer, FloatButton, List} from "antd";
 import {PlayCircleOutlined, VideoCameraOutlined} from "@ant-design/icons";
+import {useNavigate} from "react-router-dom";
 
 function extractFileName(url: string): string {
     return url.substring(url.lastIndexOf('/') + 1);
 }
+
 const Video: React.FC = () => {
+    const navigate = useNavigate();
+    const handleLogin = () => {
+        navigate('/') // replace '/some/path' with your desired path
+    };
     const [open, setOpen] = useState(false);
 
     const videoList = [
@@ -23,14 +29,20 @@ const Video: React.FC = () => {
         }
     };
     return (
-        <div>
+        <div style={{
+            position: 'fixed',
+            right: 0,
+            bottom: 0,
+            minWidth: '100%',
+            minHeight: '100%'
+        }}>
             <FloatButton
                 onClick={() => setOpen(true)}
                 shape="square"
                 type="primary"
-                style={{ position:'absolute',right: 14 ,bottom: 400}}
+                style={{position: 'absolute', right: 14, bottom: 400}}
                 description="切换视频"
-                icon={<VideoCameraOutlined />}
+                icon={<VideoCameraOutlined/>}
             />
             <Drawer title="视频列表" onClose={() => setOpen(false)} open={open}>
                 <List
@@ -42,18 +54,21 @@ const Video: React.FC = () => {
                             {extractFileName(url)}
                             <Button
                                 onClick={() => changeVideoSource(url)}
-                                style={{ marginLeft: 30 }}
+                                style={{marginLeft: 30}}
                                 type="primary"
-                                icon={<PlayCircleOutlined />}
+                                icon={<PlayCircleOutlined/>}
                             >
                                 播放
                             </Button>
                         </List.Item>
                     )}
                 />
+                <Button onClick={handleLogin} style={{width:'100%',marginTop:10}} type='primary'>
+                    回到首页
+                </Button>
             </Drawer>
-            <video width="100%" ref={videoRef} controls>
-                <source src={videoSrc} type="application/x-mpegURL" />
+            <video style={{height:'100vh'}} ref={videoRef} controls>
+                <source src={videoSrc} type="application/x-mpegURL"/>
                 Your browser does not support the video tag.
             </video>
         </div>
