@@ -29,13 +29,7 @@ const Video: React.FC = () => {
         }
     };
     return (
-        <div style={{
-            position: 'fixed',
-            right: 0,
-            bottom: 0,
-            minWidth: '100%',
-            minHeight: '100%'
-        }}>
+        <div>
             <FloatButton
                 onClick={() => setOpen(true)}
                 shape="square"
@@ -67,7 +61,7 @@ const Video: React.FC = () => {
                     回到首页
                 </Button>
             </Drawer>
-            <video style={{height:'100vh'}} ref={videoRef} controls>
+            <video width='100%' ref={videoRef} controls>
                 <source src={videoSrc} type="application/x-mpegURL"/>
                 Your browser does not support the video tag.
             </video>
