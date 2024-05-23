@@ -15,6 +15,7 @@ const Video: React.FC = () => {
     const [open, setOpen] = useState(false);
 
     const videoList = [
+        'https://robin-store.oss-cn-shanghai.aliyuncs.com/video/respect%202.mov',
         'https://robin-store.oss-cn-shanghai.aliyuncs.com/1544303955-1-192.mp4',
         'https://robin-store.oss-cn-shanghai.aliyuncs.com/547737288-1-16.mp4',
     ];
