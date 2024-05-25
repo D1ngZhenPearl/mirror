@@ -11,9 +11,9 @@ const Class: React.FC = () => {
     };
     return (
         <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
-            <Avatar size={52} icon={<UserOutlined/>}
-                    style={{position: 'absolute', right: '10px', top: '10px'}}
-            />
+            {/*<Avatar size={52} icon={<UserOutlined/>}*/}
+            {/*        style={{position: 'absolute', right: '10px', top: '10px'}}*/}
+            {/*/>*/}
             <Layout
                 style={{
                     minHeight: "100vh",

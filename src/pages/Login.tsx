@@ -5,28 +5,19 @@ import {useNavigate} from 'react-router-dom';
 import {FullscreenExitOutlined, FullscreenOutlined} from "@ant-design/icons";
 import {Button} from "antd";
 import {useEffect, useState} from "react";
-import {FullScreen, useFullScreenHandle} from "react-full-screen";
 
 const Login: React.FC = () => {
-    const handle = useFullScreenHandle();
     const navigate = useNavigate();
     const handleLogin = () => {
         navigate('/class') // replace '/some/path' with your desired path
     };
     return (
-        <FullScreen handle={handle}>
+
             <div
                 style={{
                     backgroundColor: 'white', height: '100vh',
                 }}
             >
-                {/*<Button */}
-                {/*    type="text"*/}
-                {/*    onClick={handle.enter}*/}
-                {/*>*/}
-                {/*    <FullscreenExitOutlined/>*/}
-                {/*</Button>*/}
-
                 <LoginFormPage
                     backgroundImageUrl="https://mdn.alipayobjects.com/huamei_gcee1x/afts/img/A*y0ZTS6WLwvgAAAAAAAAAAAAADml6AQ/fmt.webp"
                     logo="https://robin-store.oss-cn-shanghai.aliyuncs.com/boomteam/boomteam_logo.jpg"
@@ -39,7 +30,6 @@ const Login: React.FC = () => {
                 >
                 </LoginFormPage>
             </div>
-        </FullScreen>
 
     )
 }
