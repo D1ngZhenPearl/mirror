@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Outlet} from 'react-router-dom';
 import {FullScreen, useFullScreenHandle} from "react-full-screen";
 import {FullscreenExitOutlined} from "@ant-design/icons";
-import {Button} from "antd";
+import {Button, ConfigProvider, theme} from "antd";
 
 function Layout() {
     const handle = useFullScreenHandle();
@@ -20,16 +20,15 @@ function Layout() {
 
     return (
         <FullScreen handle={handle}>
-            <Button
-                style={{zIndex: 100, position: 'absolute', right: '10px', top: '10px'}}
-                shape="circle"
-                size='large'
-                ghost
-                onClick={handleClick}
-            >
-                <FullscreenExitOutlined/>
-            </Button>
-            <Outlet/>
+            <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
+                <Button
+                    style={{ position: 'absolute', right: '10px', top: '10px'}}
+                    onClick={handleClick}
+                >
+                    <FullscreenExitOutlined/>
+                </Button>
+                <Outlet/>
+            </ConfigProvider>
         </FullScreen>
     );
 };

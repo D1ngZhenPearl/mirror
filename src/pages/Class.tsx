@@ -10,10 +10,6 @@ const Class: React.FC = () => {
         navigate('/course') // replace '/some/path' with your desired path
     };
     return (
-        <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
-            {/*<Avatar size={52} icon={<UserOutlined/>}*/}
-            {/*        style={{position: 'absolute', right: '10px', top: '10px'}}*/}
-            {/*/>*/}
             <Layout
                 style={{
                     minHeight: "100vh",
@@ -31,7 +27,6 @@ const Class: React.FC = () => {
                     <h2>霹雳舞将江北校区 -  一对一私教</h2>
                 </Card>
             </Layout>
-        </ConfigProvider>
     )
 }
 export default Class
