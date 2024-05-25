@@ -9,8 +9,6 @@ import {FullScreen, useFullScreenHandle} from "react-full-screen";
 
 const Login: React.FC = () => {
     const handle = useFullScreenHandle();
-    const [fullScreen, setFullScreen] = useState(false);
-
     const navigate = useNavigate();
     const handleLogin = () => {
         navigate('/class') // replace '/some/path' with your desired path
@@ -22,12 +20,12 @@ const Login: React.FC = () => {
                     backgroundColor: 'white', height: '100vh',
                 }}
             >
-                <Button
-                    type="text"
-                    onClick={handle.enter}
-                >
-                    <FullscreenExitOutlined/>
-                </Button>
+                {/*<Button */}
+                {/*    type="text"*/}
+                {/*    onClick={handle.enter}*/}
+                {/*>*/}
+                {/*    <FullscreenExitOutlined/>*/}
+                {/*</Button>*/}
 
                 <LoginFormPage
                     backgroundImageUrl="https://mdn.alipayobjects.com/huamei_gcee1x/afts/img/A*y0ZTS6WLwvgAAAAAAAAAAAAADml6AQ/fmt.webp"

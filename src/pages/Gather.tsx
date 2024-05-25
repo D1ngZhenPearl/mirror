@@ -10,7 +10,7 @@ const Gather: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     return (
         <div>
-            <video width='100%' height="700px" ref={videoRef} controls autoPlay onClick={handleVideo} onEnded={handleVideo}>
+            <video width='100%'  ref={videoRef} controls autoPlay onClick={handleVideo} onEnded={handleVideo}>
                 <source src={videoSrc} type="application/x-mpegURL"/>
                 Your browser does not support the video tag.
             </video>
